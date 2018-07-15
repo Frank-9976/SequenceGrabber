@@ -27,8 +27,8 @@ def main():
         return
     #Get minDate and maxDate
     #May add command line support in the future
-    minDate = input('Minimum sequence id to retrieve? (0 for no minimum)')
-    maxDate = input('Maximum sequence id to retrieve? (-1 for no maximum)')
+    minDate = input('Minimum sequence id to retrieve? (0 for no minimum) ')
+    maxDate = input('Maximum sequence id to retrieve? (-1 for no maximum) ')
     
     #Ensure that the user ID, minDate, and maxDate is a number
     if not IsInteger(userID):
