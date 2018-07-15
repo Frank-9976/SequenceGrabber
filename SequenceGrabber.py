@@ -59,7 +59,7 @@ def main():
     sequences = GetSequences(userID, minDate, maxDate)
     for s in sequences:
         seqID, title = s
-        fileName = ''.join(x for x in f'{seqID} - {title}.mid' if x not in '\/:*?<>|')
+        fileName = ''.join(x for x in f'{seqID} - {title}.{Type}' if x not in '\/:*?<>|')
         filePath = f'{userID}\\{fileName}'
         if not os.path.isfile(filePath):
             print(f'Downloading {fileName}')
