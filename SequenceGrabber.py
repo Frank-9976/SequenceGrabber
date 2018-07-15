@@ -25,19 +25,29 @@ def main():
     else:
         print('USAGE: SequenceGrabber <User ID>')
         return
+    #Get minDate and maxDate
+    #May add command line support in the future
+    minDate = input('Minimum sequence id to retrieve? (0 for no minimum)')
+    maxDate = input('Maximum sequence id to retrieve? (-1 for no maximum)')
     
-    #Ensure that the user ID is a number
+    #Ensure that the user ID, minDate, and maxDate is a number
     if not IsInteger(userID):
         print('User ID must be an integer.')
+    if not IsInteger(minDate):
+        print('minDate must be an integer.')
+    if not IsInteger(maxDate):
+        print('maxDate must be an integer.')
 
     userID = int(userID)
+    minDate = int(minDate)
+    maxDate = int(maxDate)
 
     #Create a folder for this user
     if not os.path.exists(str(userID)):
         os.makedirs(str(userID))
 
     #Download each sequence
-    sequences = GetSequences(userID)
+    sequences = GetSequences(userID, minDate, maxDate)
     for s in sequences:
         seqID, title = s
         fileName = ''.join(x for x in f'{seqID} - {title}.mid' if x not in '\/:*?<>|')
