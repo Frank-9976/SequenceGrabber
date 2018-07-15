@@ -5,7 +5,7 @@ Sequences are downloaded to the directory that the program is located in, inside
 
 Now with TIME RANGE and FILE FORMAT SUPPORT!
 
-### Downloadh
+### Download
 The old program was made in Python, and converted to a .exe file using Pyinstaller. I haven't converted it and I do not intend to. Hopefully the original creators will.
 
 ### Usage
