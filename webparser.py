@@ -1,10 +1,10 @@
 from urllib.request import urlopen
 
 MEMBERS = 'https://onlinesequencer.net/members'
-def GetSequences(userID):
+def GetSequences(userID, minDate, maxDate):
     '''
-    Takes a user ID number as an argument.
-    Returns a list of tuples containing IDs and titles of sequences.
+    Takes a user ID number and time boundaries as arguments.
+    Returns a list of tuples containing IDs and titles of sequences with IDs between minDate and maxDate.
     '''
     sequences = []
     
@@ -40,7 +40,10 @@ def GetSequences(userID):
             ID_end = data.find('"', ID_start)
             ID = int(data[ID_start:ID_end])
             
-            sequences.append( (ID, title) )
+            #Only add to sequences if between bounds if bounds exist. No maxDate is coded as -1.
+            #Could be optimized in the future due to OS's automatic sorting of sequences.
+            if minDate <= ID and (ID <= maxDate or maxDate == -1):
+                sequences.append( (ID, title) )
             
         page += 1
         
