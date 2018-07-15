@@ -6,13 +6,9 @@ Sequences are downloaded to the directory that the program is located in, inside
 NOW WITH TIME RANGE SUPPORT!
 
 ### Download
-
-I made a GitHub account for this, and thus I will have to figure this one out.
+The old program was made in Python, and converted to a .exe file using Pyinstaller. I haven't converted it and I do not intend to.
 
 ### Usage
-
 Enter your user ID to download your sequences. Your user ID is the number located at the end of the URL bar on your profile page.
 
 Then enter your minimum and maximum id numbers!
-
-The old program was made in Python, and converted to a .exe file using Pyinstaller. I haven't converted it yet.
